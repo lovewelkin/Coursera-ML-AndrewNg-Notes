@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Week8</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h1 id="toc_0">Week 8</h1>
+
+<h2 id="toc_1">Lecture 13  Clustering(聚类)</h2>
+
+<hr>
+
+<h3 id="toc_2">13.1. introduction</h3>
+
+<ul>
+<li>supervised learning: label y, training set:\({(x^{(1)},y^{(1)})(x^{(2)},y^{(2)}),...,(x^{(m)},y^{(m)})}\)</li>
+<li>unsupervised learning: no label y, training set: \({x^{(1)},x^{(2)}......x^{(m)}}\)</li>
+</ul>
+
+<p><strong>Application of clustering</strong></p>
+
+<ul>
+<li>Market segmentation</li>
+<li>Social network analysis</li>
+<li>Organize computing clusters</li>
+<li>Astronomical data analysis</li>
+</ul>
+
+<h3 id="toc_3">13.2. K-means algorithm</h3>
+
+<h4 id="toc_4">13.2.1.通用描述.</h4>
+
+<p>输入为K和数据集, 注意这里不再需要添加x0=1这一项.
+<img src="../images/1301.png" alt=""></p>
+
+<p>（1）首先随机初始化K个 cluster centroid, 记作μK.</p>
+
+<p>（2）Cluster assignment: 遍历所数据, 若第i个数据离第k个cluster centroid最近, 则记为：c(i)=k.</p>
+
+<p>（3）Movecentroid: 将第k个簇的均值赋值给μk.</p>
+
+<p><img src="../images/1302.png" alt=""></p>
+
+<p>*对于没有明显区分的数据也可以用k-means算法。
+<img src="../images/1303.png" alt=""></p>
+
+<h4 id="toc_5">13.2.2. Cost Function</h4>
+
+<p><img src="../images/1304.png" alt="">
+<img src="../images/1305.png" alt=""></p>
+
+<h4 id="toc_6">13.2.3. Random initialization</h4>
+
+<p>下图说明了该如何随机地选取cluster centroid.
+<img src="../images/1306.png" alt="">
+下图说明了该如何随机地选取cluster centroid.
+<img src="../images/1307.png" alt="">
+为了解决上述问题, 我们需要随机初始化多次, 然后计算出每次J的值, 最后得到一个更好的最优解.
+<img src="../images/1308.png" alt=""></p>
+
+<h4 id="toc_7">13.2.4. What is the right value of K?</h4>
+
+<p><strong>方法1</strong></p>
+
+<p>我们使用Elbow method, 即描绘出J关于K的图像, 然后找到”elbow”的位置, 这个位置对应的点就是应该选择的簇数. 如下左图所示. 但是, 我们经常会的到如下右图所示的样子, 它没有一个明显的”elbow”, 这样选择就比较困难了.
+<img src="../images/1309.png" alt=""></p>
+
+<p><strong>方法2</strong></p>
+
+<p>另一种选择K的方法, 就是根据我们特定的目标去选. 例如, 在给T恤标尺码的时候, 如果我们想要分成三个尺码S, M, L, 那么我们就应该选择K＝3；如果我们想要分成5个尺码XS, S, M, L, XL那么我们就应该选择K＝5.
+<img src="../images/1310.png" alt=""></p>
+
+<h2 id="toc_8">Lecture 14  Dimensionality Reduction(降维)</h2>
+
+<hr>
+
+<h3 id="toc_9">14.1. Motivation(降维的动机)</h3>
+
+<h4 id="toc_10">14.1.1. Data Compression(数据降维)</h4>
+
+<p>好处：节省空间；让学习算法运行得更快。</p>
+
+<h4 id="toc_11">14.1.2. Data Visualization</h4>
+
+<p>让数据可视化。</p>
+
+<h3 id="toc_12">14.2. PCA(Principal components analysis 主成分分析)</h3>
+
+<h4 id="toc_13">14.2.1. PCA formulation</h4>
+
+<p>PCA就是找到一条直线，使得每个样本到这条直线的投影距离（投影误差）最小。
+<img src="../images/1401.png" alt=""></p>
+
+<p><strong>区别线性回归和PCA。它们是完全不同的算法。</strong></p>
+
+<p>在线性回归中(下左图), 我们想要的是能够拟合数据的一条直线, 最小化的是两点之间y的差；而在PCA中我们最小化的是点到直线的距离(注意下右图中点垂直于线的距离)。并且, 在线性回归中, 有一个label y；而在PCA中所有的都是特征x1,x2,....
+<img src="../images/1402.png" alt=""></p>
+
+<h4 id="toc_14">14.2.2. PCA algorithm</h4>
+
+<ul>
+<li>【<strong>预处理</strong>】使用PCA前，先对数据进行feature scaling/mean normalization（均值归一化）处理。
+<img src="../images/1403.png" alt=""></li>
+<li><p>【<strong>目标</strong>】PCA中, 我们需要计算的就是向量u和新的特征z. 
+<img src="../images/1404.png" alt=""></p>
+
+<ul>
+<li><p>首先计算出数据x的covariance matrixΣ (协方差矩阵)：n*n</p></li>
+<li><p>然后计算eigenvectors of matrix Σ(Σ的特征向量)。  在Octave里面的方法是：使用奇异值分解(Sigular Value Decomposition, SVD)计算[U, S, V]= svd(sigma) ，其中U和V代表二个相互正交矩阵，而S代表一对角矩阵。</p></li>
+<li><p>[U,S,V]里的U是一个具有与数据之间最小投射误差的方向向量构成的矩阵：n*n。</p></li>
+<li><p>如果我们需要将数据从n维降到k维, 取U的前k列, 记为\(U_{reduce}\).
+<img src="../images/1405.png" alt=""></p></li>
+<li><p>最后通过如下的方法得到z: \(Z = U^T_{reduce} * X\)
+<img src="../images/1406.png" alt=""></p></li>
+</ul></li>
+<li><p>总结
+<img src="../images/1407.png" alt=""></p></li>
+</ul>
+
+<h3 id="toc_15">14.3. Reconstruction from compressed representation</h3>
+
+<p>数据降维后, 可以通过 \(z = U_{reduce}^T * x\) 来的得到原始数据的近似值.
+<img src="../images/1408.png" alt=""></p>
+
+<h3 id="toc_16">14.4. Choosing the number of principal components</h3>
+
+<ul>
+<li>那么该如何选择k的值？一般选择一个最小的k并且满足下图中的公式.
+<img src="../images/1409.png" alt=""></li>
+<li>我们可以使用下左图中的算法来选择k的值, 但是这样做效率太低；更好的选择是使用下右图中的方法, 在调用一次SVD之后, 我们只需要找到一个最小的k并且满足 \(\frac {\Sigma_{i=1}^k s_i} {\Sigma_{i=1}^n s_i} \ge 0.99\)  即可.
+<img src="../images/1410.png" alt="">
+即：
+<img src="../images/1411.png" alt=""></li>
+</ul>
+
+<h3 id="toc_17">14.5. Advices for applying PCA</h3>
+
+<p><img src="../images/1412.png" alt="">
+<img src="../images/1413.png" alt="">
+不要用PCA解决过拟合的问题。正确的做法是regularization。
+<img src="../images/1414.png" alt="">
+在使用PCA之前应该考虑先使用原始数据, 如果使用原始数据不能达到效果, 再考虑使用PCA.
+<img src="../images/1415.png" alt=""></p>
+
+<h3 id="toc_18">解释困惑</h3>
+
+<ul>
+<li>Q1:特征分解和奇异值分解的区别？</li>
+<li><p>A1:它们都是矩阵分解的方法。矩阵分解的方法有多种：LU分解、特征分解、奇异值分解、QR分解、极分解等。特征分解要求被分解的矩阵为方阵，SVD并不要求要被分解的矩阵为方阵。</p></li>
+<li><p>Q2:SVD分解出来的是？</p></li>
+<li><p>A2:任何一个m*n矩阵都能进行奇异值分解，拆分为3个矩阵相乘的形式。 \(A=U *\Sigma * V^T \)</p>
+
+<ul>
+<li>\(\Sigma\)的对角线上的元素是奇异值（其余元素0），奇异值的平方也就是\(AA^T\)和\(A^TA\)的特征值，从大到小排列。</li>
+<li>U是左奇异，是\(AA^T\)的特征向量。在这里用于取前k列。</li>
+<li>V是右奇异，是\(A^TA\)的特征向量。</li>
+<li>所以，当我们回到最初，我们想要计算出数据x的covariance matrix Σ (协方差矩阵)的eigenvectors(Σ的特征向量)。  而Σ的公式为：\(Sigma = 1/m * \Sigma_{i=1}^m(x^{i})(x^{i})^T\), 而U恰好正是其特征向量。
+<img src="../images/1416.png" alt=""></li>
+</ul></li>
+<li><p>Q3:通俗一点解释特征值，奇异值的意思。</p></li>
+<li><p>A3:SVD将数据分解成三个矩阵U，S，VT，其中S是一个对角阵，其中对角元素为奇异值，它代表着矩阵的重要特征，从左上角到右下角重要程度递减。因为奇异值往往对应着矩阵中隐含的重要信息，而且奇异值大小与重要性正相关。比如在补充6里面，matlab图像测试，前50个特征就基本涵盖了原图所有信息。 <strong>特征值矩阵等于奇异值矩阵的平方。</strong> 详见补充4。</p>
+
+<h3 id="toc_19">补充理解：</h3></li>
+<li><p>1.<a href="https://www.zhihu.com/question/-%2022237507">知乎：奇异值的物理意义和几何意义</a></p></li>
+<li><p>2.<a href="https://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html">机器学习中的数学：特征值和奇异值</a></p></li>
+<li><p>3.<a href="http://www.ams.org/publicoutreach/feature-column/fcarc-svd">AMS-SVD-We Recommend a Singular Value Decomposition</a></p></li>
+<li><p>4.<a href="https://www.cnblogs.com/pinard/p/6251584.html">SVD及应用</a></p></li>
+<li><p>5.<a href="https://zhuanlan.zhihu.com/p/26306568">知乎：SVD解密</a></p></li>
+<li><p>6.<a href="https://blog.csdn.net/index20001/article/details/73501632">直观的理解，python实现，应用场合</a></p></li>
+</ul>
+
+
+
+
+</body>
+
+</html>
